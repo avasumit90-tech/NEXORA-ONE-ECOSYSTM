@@ -51,7 +51,7 @@ export const Hero: React.FC = () => {
           Apne kaam ka digital platform, <span className="text-[#10B981]">ek hi jagah.</span>
         </motion.h1>
 
-        {/* Supporting Line in Indian Hinglish */}
+        {/* Supporting Line: Core Business Value Proposition */}
         <motion.p
           initial="hidden"
           animate="visible"
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
           transition={{ delay: 0.1 }}
           className="mt-6 text-base sm:text-lg md:text-xl text-[color-mix(in_srgb,var(--text)_70%,transparent)] max-w-2xl leading-relaxed text-balance"
         >
-          Salon ki website banani ho, beauty service dhoondhni ho, job dekhni ho ya apna business badhana ho — apna option chunein.
+          Free beauty website, 30+ templates aur Growth Partner ki onboarding help — sab ek connected beauty ecosystem mein.
         </motion.p>
 
         {/* Dual CTAs */}
@@ -86,21 +86,21 @@ export const Hero: React.FC = () => {
             variant="outline"
             size="lg"
             className="w-full sm:w-auto text-base"
-            ariaLabel="Products Dekhein"
+            ariaLabel="Explore Services"
           >
-            Products Dekhein
+            Explore Services
           </Button>
         </motion.div>
       </div>
 
-      {/* Hero Visual Mockup: Clean CSS/SVG device mockup with emerald glow fallback */}
+      {/* Hero Visual Mockup: Clean device mockup with --surface-card (#161616) */}
       <motion.div
         initial="hidden"
         animate="visible"
         variants={mockupVariants}
         className="mt-14 sm:mt-20 max-w-5xl mx-auto"
       >
-        <div className="relative rounded-[24px] bg-[color-mix(in_srgb,var(--color-1)_92%,var(--text)_8%)] border border-[color-mix(in_srgb,var(--text)_10%,transparent)] p-3 sm:p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
+        <div className="relative rounded-[24px] bg-[#161616] border border-[color-mix(in_srgb,var(--text)_10%,transparent)] p-3 sm:p-5 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden">
           {/* Top Mockup Window Controls */}
           <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-[color-mix(in_srgb,var(--text)_8%,transparent)] mb-4 px-2">
             <div className="flex items-center gap-2">

@@ -6,9 +6,14 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 interface HorizontalProductRowProps {
   title: string;
   products: ProductItem[];
+  cardClassName?: string;
 }
 
-export const HorizontalProductRow: React.FC<HorizontalProductRowProps> = ({ title, products }) => {
+export const HorizontalProductRow: React.FC<HorizontalProductRowProps> = ({
+  title,
+  products,
+  cardClassName = 'border border-[var(--border-subtle)]',
+}) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -97,10 +102,10 @@ export const HorizontalProductRow: React.FC<HorizontalProductRowProps> = ({ titl
         tabIndex={0}
         role="region"
         aria-label={`${title} products row`}
-        className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory py-2 px-0.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#10B981] rounded-2xl"
+        className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory py-3 px-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#10B981] rounded-2xl"
       >
         {products.map((product) => (
-          <ProductCard key={product.id} item={product} />
+          <ProductCard key={product.id} item={product} className={cardClassName} />
         ))}
       </div>
     </div>

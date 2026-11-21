@@ -16,9 +16,13 @@ import {
 
 interface ProductCardProps {
   item: ProductItem;
+  className?: string;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  item,
+  className = 'border border-[var(--border-subtle)]',
+}) => {
   const getProductIcon = () => {
     switch (item.iconType) {
       case 'customer':
@@ -41,7 +45,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
   };
 
   return (
-    <GlassCard className="w-[280px] shrink-0 snap-start p-5 flex flex-col justify-between h-[280px] select-none">
+    <GlassCard
+      className={`w-[280px] shrink-0 snap-start p-5 flex flex-col justify-between h-[280px] select-none bg-[var(--surface-card,#161616)] hover:scale-102 motion-reduce:hover:scale-100 ${className}`.trim()}
+    >
       <div>
         {/* Top Header: Neutral Icon Fallback & Status Badge */}
         <div className="flex items-start justify-between gap-2 mb-4">
@@ -66,7 +72,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ item }) => {
       </div>
 
       {/* Direct Valid Action */}
-      <div className="pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] mt-auto">
+      <div className="pt-3 border-t border-[var(--border-subtle)] mt-auto">
         {item.url ? (
           <a
             href={item.url}

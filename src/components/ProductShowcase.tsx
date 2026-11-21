@@ -7,21 +7,23 @@ export const ProductShowcase: React.FC = () => {
   return (
     <section id="products" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-x-clip scroll-mt-20">
       <SectionHeading
-        eyebrow="Product Showcase"
-        title="Nexora ke Products"
-        subtitle="Alag-alag zarooraton ke liye alag products — ek hi jagah se explore karein."
+        eyebrow="Services & Platforms"
+        title="Explore Our Services & Platforms"
+        subtitle="Alag-alag zarooraton ke liye specific digital products — ek hi jagah se explore karein."
       />
 
-      {/* Row 1: Beauty & Business Products */}
+      {/* Row 1: Beauty & Business Services */}
       <HorizontalProductRow
-        title="Beauty aur Business Products"
+        title="Beauty & Business Services"
         products={PRODUCTS_ROW_1}
+        cardClassName="border border-[var(--border-subtle)]"
       />
 
-      {/* Row 2: Other Products */}
+      {/* Row 2: Other Services */}
       <HorizontalProductRow
-        title="Doosre Products"
+        title="Other Services"
         products={PRODUCTS_ROW_2}
+        cardClassName="border border-[var(--border-subtle)]"
       />
     </section>
   );

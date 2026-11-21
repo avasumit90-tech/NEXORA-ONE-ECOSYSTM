@@ -12,6 +12,7 @@ import { EcosystemCategories } from './components/EcosystemCategories';
 import { HowItWorks } from './components/HowItWorks';
 import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
+import { SectionDivider } from './components/ui/SectionDivider';
 
 export default function App() {
   return (
@@ -24,17 +25,27 @@ export default function App() {
         {/* Section B: Hero (id="home") */}
         <Hero />
 
+        <SectionDivider />
+
         {/* Section C: Audience Choice Cards (id="audiences") */}
         <AudienceCards />
+
+        <SectionDivider />
 
         {/* Section D: Product Showcase (id="products") */}
         <ProductShowcase />
 
+        <SectionDivider />
+
         {/* Section E: Ecosystem Categories (id="about" & id="ecosystem") */}
         <EcosystemCategories />
 
+        <SectionDivider />
+
         {/* Section F: How It Works Strip (id="how-it-works") */}
         <HowItWorks />
+
+        <SectionDivider />
 
         {/* Section G: Final CTA (id="cta") */}
         <FinalCTA />

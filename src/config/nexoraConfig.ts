@@ -38,12 +38,39 @@ export interface NavLinkItem {
   sectionId: string;
 }
 
+export interface SocialLinkItem {
+  id: 'instagram' | 'linkedin' | 'youtube' | 'x';
+  label: string;
+  url: string | null;
+}
+
+export interface FooterBusinessLinkItem {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+}
+
 export const NAV_LINKS: NavLinkItem[] = [
   { label: 'Home', href: '#home', sectionId: 'home' },
   { label: 'Ecosystem', href: '#ecosystem', sectionId: 'ecosystem' },
   { label: 'Products', href: '#products', sectionId: 'products' },
   { label: "Who It's For", href: '#audiences', sectionId: 'audiences' },
   { label: 'About', href: '#about', sectionId: 'about' },
+];
+
+export const SOCIAL_LINKS: SocialLinkItem[] = [
+  { id: 'instagram', label: 'Instagram', url: null },
+  { id: 'linkedin', label: 'LinkedIn', url: null },
+  { id: 'youtube', label: 'YouTube', url: null },
+  { id: 'x', label: 'X', url: null },
+];
+
+export const FOOTER_BUSINESS_LINKS: FooterBusinessLinkItem[] = [
+  { label: 'Salon Website & Templates', href: '#products' },
+  { label: 'SalonOS Management', href: '#products' },
+  { label: 'Growth Partner Network', href: '#audiences' },
+  { label: 'B2B Marketplace', href: '#audiences' },
+  { label: 'How to Get Started', href: '#how-it-works' },
 ];
 
 export const AUDIENCE_ITEMS: AudienceItem[] = [
@@ -114,9 +141,9 @@ export const PRODUCTS_ROW_1: ProductItem[] = [
   },
   {
     id: 'whitelabel-website',
-    name: 'White-label Salon Website',
+    name: 'White-label Salon Website / Website Templates',
     category: 'beauty-biz',
-    benefit: 'Salon ke apne naam par customized booking website.',
+    benefit: 'Salon ke apne naam par customized booking website (30+ templates).',
     status: null,
     url: null,
     actionLabel: 'Link Pending Confirmation',
@@ -124,7 +151,7 @@ export const PRODUCTS_ROW_1: ProductItem[] = [
   },
   {
     id: 'growth-partner',
-    name: 'Growth Partner platform',
+    name: 'Growth Partner Network',
     category: 'beauty-biz',
     benefit: 'Local salons ko platform se jodne aur expand karne ka network.',
     status: null,

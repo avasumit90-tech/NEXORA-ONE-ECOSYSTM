@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 export const FinalCTA: React.FC = () => {
   return (
     <section id="cta" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
-      <div className="relative rounded-[28px] bg-[color-mix(in_srgb,var(--color-1)_92%,var(--text)_8%)] border border-[color-mix(in_srgb,var(--accent)_20%,transparent)] p-8 sm:p-12 md:p-16 text-center overflow-hidden shadow-2xl">
+      <div className="relative rounded-[28px] bg-[#161616] border border-[color-mix(in_srgb,var(--accent)_20%,transparent)] p-8 sm:p-12 md:p-16 text-center overflow-hidden shadow-2xl">
         {/* Subtle ambient light */}
         <div
           className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#10B981]/15 blur-[100px] rounded-full pointer-events-none"
@@ -22,7 +22,7 @@ export const FinalCTA: React.FC = () => {
           </h2>
 
           <p className="mt-4 text-sm sm:text-base text-[color-mix(in_srgb,var(--text)_70%,transparent)] leading-relaxed">
-            Apni zaroorat ke hisaab se product ya partnership explore karein.
+            Free beauty website, 30+ templates aur Growth Partner support ke saath shuru karein.
           </p>
 
           <div className="mt-8 flex justify-center">

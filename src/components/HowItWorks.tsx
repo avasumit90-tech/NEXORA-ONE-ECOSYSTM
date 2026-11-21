@@ -22,7 +22,7 @@ export const HowItWorks: React.FC = () => {
     <section id="how-it-works" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
       <SectionHeading
         eyebrow="Quick Guide"
-        title="Shuru kaise karein?"
+        title="How to Get Started"
         subtitle="Teen aasaan steps mein platform explore karein."
       />
 

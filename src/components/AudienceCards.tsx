@@ -8,7 +8,7 @@ export const AudienceCards: React.FC = () => {
     <section id="audiences" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto scroll-mt-20">
       <SectionHeading
         eyebrow="Who It's For"
-        title="Aap Nexora par kis kaam se aaye hain?"
+        title="What are you looking for?"
         subtitle="Apne kaam ka option chunein."
       />
 
