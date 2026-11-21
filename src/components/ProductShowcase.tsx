@@ -31,7 +31,7 @@ export const ProductShowcase: React.FC = () => {
       return (
         <ProductCard
           item={itemWithUrl}
-          className="border border-[var(--border-subtle)]"
+          className="border border-[var(--border-subtle)] hover:scale-[1.02] transition-[transform,scale,border-color,box-shadow] duration-200 ease-out motion-reduce:hover:scale-100"
         />
       );
     }
@@ -46,7 +46,7 @@ export const ProductShowcase: React.FC = () => {
       >
         <ProductCard
           item={itemWithUrl}
-          className="border border-[var(--border-subtle)]"
+          className="border border-[var(--border-subtle)] hover:scale-[1.02] transition-[transform,scale,border-color,box-shadow] duration-200 ease-out motion-reduce:hover:scale-100"
           isWrappedInLink
         />
       </a>
@@ -65,7 +65,7 @@ export const ProductShowcase: React.FC = () => {
       <HorizontalProductRow
         title="Beauty & Business Services"
         products={PRODUCTS_ROW_1}
-        cardClassName="border border-[var(--border-subtle)]"
+        cardClassName="border border-[var(--border-subtle)] hover:scale-[1.02]"
         renderCard={renderLinkedCard}
       />
 
@@ -73,7 +73,7 @@ export const ProductShowcase: React.FC = () => {
       <HorizontalProductRow
         title="Other Services"
         products={PRODUCTS_ROW_2}
-        cardClassName="border border-[var(--border-subtle)]"
+        cardClassName="border border-[var(--border-subtle)] hover:scale-[1.02]"
         renderCard={renderLinkedCard}
       />
     </section>

@@ -54,7 +54,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <GlassCard
-      className={`w-[280px] shrink-0 snap-start p-5 flex flex-col justify-between h-[280px] select-none bg-[var(--surface-card,#161616)] hover:scale-102 motion-reduce:hover:scale-100 ${className}`.trim()}
+      className={`w-[280px] shrink-0 snap-start p-5 flex flex-col justify-between h-[280px] select-none bg-[var(--surface-card,#161616)] transition-[transform,scale,border-color,box-shadow] duration-200 ease-out hover:scale-[1.02] motion-reduce:hover:scale-100 ${className}`.trim()}
     >
       <div>
         {/* Top Header: Neutral Icon & Status Badge */}
