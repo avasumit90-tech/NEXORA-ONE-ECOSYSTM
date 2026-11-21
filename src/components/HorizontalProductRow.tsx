@@ -7,12 +7,14 @@ interface HorizontalProductRowProps {
   title: string;
   products: ProductItem[];
   cardClassName?: string;
+  renderCard?: (product: ProductItem) => React.ReactNode;
 }
 
 export const HorizontalProductRow: React.FC<HorizontalProductRowProps> = ({
   title,
   products,
   cardClassName = 'border border-[var(--border-subtle)]',
+  renderCard,
 }) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -104,9 +106,24 @@ export const HorizontalProductRow: React.FC<HorizontalProductRowProps> = ({
         aria-label={`${title} products row`}
         className="flex gap-4 overflow-x-auto scrollbar-none snap-x snap-mandatory py-3 px-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#10B981] rounded-2xl"
       >
-        {products.map((product) => (
-          <ProductCard key={product.id} item={product} className={cardClassName} />
-        ))}
+        {products.map((product) =>
+          renderCard ? (
+            <React.Fragment key={product.id}>{renderCard(product)}</React.Fragment>
+          ) : product.url ? (
+            <a
+              key={product.id}
+              href={product.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${product.name} — ${product.actionLabel}`}
+              className="group block shrink-0 snap-start rounded-[24px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-1)]"
+            >
+              <ProductCard item={product} className={cardClassName} isWrappedInLink />
+            </a>
+          ) : (
+            <ProductCard key={product.id} item={product} className={cardClassName} />
+          )
+        )}
       </div>
     </div>
   );

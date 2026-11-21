@@ -2,7 +2,7 @@ import React from 'react';
 import { AudienceItem } from '../config/nexoraConfig';
 import { GlassCard } from './ui/GlassCard';
 import { Button } from './ui/Button';
-import { Sparkles, Store, Users, Building2, TrendingUp, ArrowRight } from 'lucide-react';
+import { Sparkles, Store, Users, Building2, TrendingUp, ArrowRight, ExternalLink } from 'lucide-react';
 
 interface AudienceCardProps {
   item: AudienceItem;
@@ -25,6 +25,9 @@ export const AudienceCard: React.FC<AudienceCardProps> = ({ item, isFullWidthOnM
     }
   };
 
+  const destinationHref = item.externalUrl || item.targetAnchor || undefined;
+  const isExternal = Boolean(item.externalUrl);
+
   return (
     <GlassCard
       className={`p-5 flex flex-col justify-between h-full ${
@@ -32,16 +35,20 @@ export const AudienceCard: React.FC<AudienceCardProps> = ({ item, isFullWidthOnM
       }`}
     >
       <div>
-        {/* Icon & Future Badge */}
+        {/* Icon & Status Badge */}
         <div className="flex items-center justify-between mb-4">
           <div className="w-10 h-10 rounded-xl bg-[color-mix(in_srgb,var(--accent)_12%,transparent)] border border-[color-mix(in_srgb,var(--accent)_25%,transparent)] flex items-center justify-center">
             {getIcon()}
           </div>
-          {item.disabled && (
+          {item.disabled ? (
             <span className="text-[10px] font-semibold uppercase tracking-wider text-[color-mix(in_srgb,var(--text)_50%,transparent)] bg-[color-mix(in_srgb,var(--text)_6%,transparent)] px-2 py-0.5 rounded-md border border-[color-mix(in_srgb,var(--text)_10%,transparent)]">
               Future Phase
             </span>
-          )}
+          ) : isExternal ? (
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-[#10B981] bg-[color-mix(in_srgb,var(--accent)_12%,transparent)] px-2 py-0.5 rounded-md border border-[color-mix(in_srgb,var(--accent)_30%,transparent)]">
+              Live
+            </span>
+          ) : null}
         </div>
 
         {/* Title */}
@@ -63,14 +70,20 @@ export const AudienceCard: React.FC<AudienceCardProps> = ({ item, isFullWidthOnM
           </span>
         ) : (
           <Button
-            href={item.targetAnchor || undefined}
+            href={destinationHref}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
             variant="ghost"
             size="sm"
             className="w-full justify-between px-0 text-xs text-[#10B981] hover:text-[#10B981] group"
-            ariaLabel={`${item.title} ke options dekhein`}
+            ariaLabel={`${item.title} app kholiye`}
           >
             <span>{item.actionLabel}</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+            {isExternal ? (
+              <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            ) : (
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+            )}
           </Button>
         )}
       </div>

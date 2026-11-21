@@ -10,6 +10,8 @@ interface ButtonProps {
   className?: string;
   ariaLabel?: string;
   type?: 'button' | 'submit' | 'reset';
+  target?: string;
+  rel?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -22,6 +24,8 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
   ariaLabel,
   type = 'button',
+  target,
+  rel,
 }) => {
   const baseStyles =
     'inline-flex items-center justify-center font-medium transition-all duration-200 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10B981] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0705] active:scale-[0.98] min-h-[44px] whitespace-nowrap shrink-0';
@@ -50,8 +54,16 @@ export const Button: React.FC<ButtonProps> = ({
   const combinedClasses = `${baseStyles} ${sizeStyles} ${variantStyles} ${disabledStyles} ${className}`.trim();
 
   if (href && !disabled) {
+    const resolvedRel = target === '_blank' ? rel || 'noopener noreferrer' : rel;
     return (
-      <a href={href} className={combinedClasses} aria-label={ariaLabel} onClick={onClick}>
+      <a
+        href={href}
+        target={target}
+        rel={resolvedRel}
+        className={combinedClasses}
+        aria-label={ariaLabel}
+        onClick={onClick}
+      >
         {children}
       </a>
     );

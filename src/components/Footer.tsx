@@ -134,7 +134,7 @@ export const Footer: React.FC = () => {
                 {SOCIAL_LINKS.map((item) => renderSocialControl(item))}
               </div>
               <p className="text-[11px] text-[var(--text-muted)]">
-                Official social links verification ke baad active honge.
+                Official social handles jald active honge.
               </p>
             </div>
           </div>
@@ -158,6 +158,15 @@ export const Footer: React.FC = () => {
                     </a>
                   </li>
                 ))}
+                <li>
+                  <a
+                    href="#how-it-works"
+                    onClick={(e) => handleAnchorClick(e, '#how-it-works')}
+                    className={linkClasses}
+                  >
+                    How to Get Started
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -169,13 +178,25 @@ export const Footer: React.FC = () => {
               <ul className="space-y-1.5">
                 {FOOTER_BUSINESS_LINKS.map((item) => (
                   <li key={item.label}>
-                    <a
-                      href={item.href}
-                      onClick={(e) => handleAnchorClick(e, item.href)}
-                      className={linkClasses}
-                    >
-                      {item.label}
-                    </a>
+                    {item.isExternal ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClasses}
+                      >
+                        <span>{item.label}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                      </a>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={(e) => handleAnchorClick(e, item.href)}
+                        className={linkClasses}
+                      >
+                        {item.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -186,25 +207,7 @@ export const Footer: React.FC = () => {
               <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--text)] pb-2.5 mb-3 border-b border-[var(--border-subtle)]">
                 Platforms
               </h4>
-              <ul className="space-y-1.5 mb-4">
-                <li>
-                  <a
-                    href="#products"
-                    onClick={(e) => handleAnchorClick(e, '#products')}
-                    className={linkClasses}
-                  >
-                    Explore All 8 Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#ecosystem"
-                    onClick={(e) => handleAnchorClick(e, '#ecosystem')}
-                    className={linkClasses}
-                  >
-                    Ecosystem Overview
-                  </a>
-                </li>
+              <ul className="space-y-1.5">
                 {verifiedProducts.map((p) => (
                   <li key={p.id}>
                     <a
@@ -219,12 +222,6 @@ export const Footer: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-              {verifiedProducts.length === 0 && (
-                <p className="text-[11px] text-[var(--text-muted)] leading-relaxed pt-2 border-t border-[var(--border-subtle)]">
-                  External platform links domain verification ke baad add honge.
-                </p>
-              )}
             </div>
           </div>
         </div>
@@ -247,7 +244,7 @@ export const Footer: React.FC = () => {
                 {SOCIAL_LINKS.map((item) => renderSocialControl(item))}
               </div>
               <p className="text-[11px] text-[var(--text-muted)] mt-2">
-                Official social links verification ke baad active honge.
+                Official social handles jald active honge.
               </p>
             </div>
           </div>
@@ -300,16 +297,29 @@ export const Footer: React.FC = () => {
             </button>
             {mobileBusinessOpen && (
               <div className="p-3 bg-[var(--color-1)] space-y-1 border-t border-[var(--border-subtle)]">
-                {FOOTER_BUSINESS_LINKS.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(e) => handleAnchorClick(e, item.href)}
-                    className="block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 py-2"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+                {FOOTER_BUSINESS_LINKS.map((item) =>
+                  item.isExternal ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 py-2"
+                    >
+                      <span>{item.label}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={(e) => handleAnchorClick(e, item.href)}
+                      className="block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 py-2"
+                    >
+                      {item.label}
+                    </a>
+                  )
+                )}
               </div>
             )}
           </div>
@@ -331,20 +341,6 @@ export const Footer: React.FC = () => {
             </button>
             {mobileEcosystemOpen && (
               <div className="p-3 bg-[var(--color-1)] space-y-1 border-t border-[var(--border-subtle)]">
-                <a
-                  href="#products"
-                  onClick={(e) => handleAnchorClick(e, '#products')}
-                  className="block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 py-2"
-                >
-                  Explore All 8 Services
-                </a>
-                <a
-                  href="#ecosystem"
-                  onClick={(e) => handleAnchorClick(e, '#ecosystem')}
-                  className="block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 py-2"
-                >
-                  Ecosystem Overview
-                </a>
                 {verifiedProducts.map((p) => (
                   <a
                     key={p.id}
@@ -362,11 +358,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Copyright & Transparency Bar */}
+        {/* Bottom Copyright & Ecosystem Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
           <p>© {currentYear} Nexora One. All rights reserved.</p>
           <p className="text-[11px]">
-            Showcase platform — live product links are activated upon official domain verification.
+            Nexora One Connected Ecosystem — Live gateway to all beauty & business platforms.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeading } from './ui/SectionHeading';
-import { Store, Users, Sparkles, Building2, ArrowRightLeft, ShieldCheck, Layers } from 'lucide-react';
+import { Store, Users, Sparkles, Building2, ExternalLink } from 'lucide-react';
 
 export const EcosystemCategories: React.FC = () => {
   return (
@@ -38,7 +38,7 @@ export const EcosystemCategories: React.FC = () => {
 
           {/* Connected Network Overview Grid */}
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Node 1: Salon Owners & Websites */}
+            {/* Node 1: Salon Owners, Websites & Partner App */}
             <div className="p-6 rounded-2xl bg-[color-mix(in_srgb,var(--text)_3%,transparent)] border border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-xl bg-[color-mix(in_srgb,var(--accent)_12%,transparent)] border border-[color-mix(in_srgb,var(--accent)_25%,transparent)] flex items-center justify-center text-[#10B981] mb-4">
@@ -48,12 +48,37 @@ export const EcosystemCategories: React.FC = () => {
                   Salons & Shop Owners
                 </h3>
                 <p className="text-xs text-[color-mix(in_srgb,var(--text)_65%,transparent)] leading-relaxed">
-                  Free beauty website, 30+ ready templates, billing tools aur digital booking portal.
+                  Free beauty website, paid white-label themes, website creator tool aur salon partner rewards.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs text-[#10B981]">
-                <span>SalonOS Powered</span>
-                <ShieldCheck className="w-4 h-4" />
+              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
+                <a
+                  href="https://www.nexorasalon.online/partner-rewards"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Partner App</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://www.nexorasalon.online/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>White-label</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://business-web-solutions-kohl.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Web Creator</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
@@ -70,9 +95,16 @@ export const EcosystemCategories: React.FC = () => {
                   Real assisted onboarding aur field support jo salons ko platform se aasaani se jodta hai.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs text-[#10B981]">
-                <span>Assisted Support</span>
-                <ArrowRightLeft className="w-4 h-4" />
+              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs">
+                <a
+                  href="https://nexora-beauty-network.templateapp67.chatgpt.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between w-full text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Open Growth Partner App</span>
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
@@ -89,9 +121,16 @@ export const EcosystemCategories: React.FC = () => {
                   Nearby salons aur verified beauty services discover karna, rate card dekhna aur booking karna.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs text-[#10B981]">
-                <span>App & Web Direct</span>
-                <Layers className="w-4 h-4" />
+              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs">
+                <a
+                  href="https://www.nexorasalon.online/?app=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between w-full text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Open Customer App</span>
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                </a>
               </div>
             </div>
 
@@ -105,12 +144,55 @@ export const EcosystemCategories: React.FC = () => {
                   B2B Trade & Services
                 </h3>
                 <p className="text-xs text-[color-mix(in_srgb,var(--text)_65%,transparent)] leading-relaxed">
-                  Distributor supplies, salon hiring (Jobs), commercial leasing (Real Estate) aur Food platform.
+                  Distributor supplies, salon hiring (Jobs), commercial leasing (Real Estate), Food aur Car Mitra.
                 </p>
               </div>
-              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex items-center justify-between text-xs text-[#10B981]">
-                <span>Connected Commerce</span>
-                <ShieldCheck className="w-4 h-4" />
+              <div className="mt-5 pt-3 border-t border-[color-mix(in_srgb,var(--text)_6%,transparent)] flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
+                <a
+                  href="https://beauty-shop-2.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>B2B</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://nexora-salon-job-portal.templateapp67.chatgpt.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Jobs</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://no-broker-delta.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Real Estate</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://nexora-food.templateapp67.chatgpt.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Food</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
+                <a
+                  href="https://carmitra-jaipur.templateapp67.chatgpt.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#10B981] hover:text-[#F0E9E7] transition-colors font-medium"
+                >
+                  <span>Car Mitra</span>
+                  <ExternalLink className="w-3 h-3" aria-hidden="true" />
+                </a>
               </div>
             </div>
           </div>
